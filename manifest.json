@@ -1,0 +1,38 @@
+{
+  "name": "멜론 티켓 도우미",
+  "version": "0.1",
+  "description": "예매를 도와줍니다!",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ticket.melon.com/performance/index.htm?prodId=**"],
+      "run_at": "document_start",
+      "js": ["inject-schedules.js"]
+    },
+    {
+    "matches": ["https://ticket.melon.com/reservation/popup/onestop.htm"],
+    "run_at": "document_start",
+    "js": ["inject-seats.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["schedules.js", "seats.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://ticket.melon.com/"
+  ]
+}
