@@ -17,7 +17,7 @@ function doSeatMagic() {
   f.$(`#divGradeSummary li:contains("${config.좌석구역}")`).click();
 
   /** 첫 번째 예매 가능한 좌석을 찍습니다. */
-  f.$('#ez_canvas svg rect[fill!="#DDDDDD"]').get(1/*0은 전체 사각형 그 자체*/).dispatchEvent(new Event('click'));
+  f.$('#ez_canvas svg rect[fill!="#DDDDDD"]').get(42/*0은 전체 사각형 그 자체*/).dispatchEvent(new Event('click'));
 
   /** 가격 선택 화면으로 넘어갑니다. */
   f.$('#nextTicketSelection').click();
