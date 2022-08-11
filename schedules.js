@@ -4,7 +4,7 @@
 
 async function doScheduleMagic() {
   const config = {
-    날짜: '03일'
+    날짜: '18일'
   };
 
   const sleep = (t) => new Promise(resolve => setTimeout(resolve, t));
@@ -29,4 +29,3 @@ window.addEventListener('load', function () {
 
   console.log('준비 완료 >_<');
 });
-

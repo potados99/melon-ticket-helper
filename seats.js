@@ -6,8 +6,8 @@ function doSeatMagic() {
   const f = document.getElementById('oneStopFrame').contentWindow;
 
   const config = {
-    좌석등급: 'R',
-    좌석구역: '1 층 A',
+    좌석등급: '현장수령', /*현장수령S석(2회차), 노란색*/
+    좌석구역: 'Floor 층 17 구역', /*98석 잔여*/
   };
 
   /** 좌석 등급을 선택합니다. */
