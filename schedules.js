@@ -40,7 +40,7 @@ async function doScheduleMagic() {
           frm.shuffleKey.value = encodeURIComponent('44446415606466425564');
           frm.netfunnel_key.value = ":key=" + '${ret.data.key}' + "&";
           frm.submit();
-        }){}`;
+        })()`;
         console.log(`이렇게 쓰시라구요:\n${theSecretCode}`);
         alert(`이렇게 쓰시라구요:\n${theSecretCode}`);
 
