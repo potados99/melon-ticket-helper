@@ -13,6 +13,8 @@ finishLoading = () => {};
 loadingPromise = Promise.resolve();
 
 async function doMagic(f/**frame*/) {
+  const sleep = (t) => new Promise(resolve => setTimeout(resolve, t));
+
   /** 새로고침 전에 코드를 조금 바꿔줍니다. */
   f.setLoading = function (isloading) {
     if (isloading) {
@@ -23,10 +25,9 @@ async function doMagic(f/**frame*/) {
 
       loadingOpen(" ");
     }else {
-      finishLoading();
-
       setTimeout(function(){
         loadingClose();
+        finishLoading();
       }, 500);
     }
   }
@@ -37,10 +38,15 @@ async function doMagic(f/**frame*/) {
 
   /** 좌석 구역을 다 펼칩니다. */
   f.$(`#divGradeSummary tr:contains("VIP")`).first().click();
+  await sleep(100);
   f.$(`#divGradeSummary tr:contains("R")`).first().click();
+  await sleep(100);
   f.$(`#divGradeSummary tr:contains("S")`).first().click();
+  await sleep(100);
   f.$(`#divGradeSummary tr:contains("현장수령")`).first().click();
+  await sleep(100);
   f.$(`#divGradeSummary tr:contains("A")`).first().click();
+  await sleep(100);
 
   /** 좌석 구역 중 자리가 있는 것을 가져옵니다.. */
   const availableSections = f.$(`#divGradeSummary li span.seat_residual`).filter(function () { return Number.parseInt($(this).text()) !== 0 });
@@ -52,9 +58,11 @@ async function doMagic(f/**frame*/) {
 
   /** 첫 번째 좌석 구역을 선택합니다. */
   availableSections.first().click();
+  await sleep(100);
 
   /** 첫 번째 예매 가능한 좌석을 찍습니다. */
   f.$('#ez_canvas svg rect[fill!="#DDDDDD"]').get(1/*0은 전체 사각형 그 자체*/).dispatchEvent(new Event('click'));
+  await sleep(100);
 
   /** 가격 선택 화면으로 넘어갑니다. */
   f.$('#nextTicketSelection').click();
@@ -83,10 +91,10 @@ async function runOrStop() {
         break;
       }
     } catch (e) {
-      console.error('아아악!');
+      console.error('아아악!', e);
     }
 
-    await sleep(500);
+    await sleep(100);
   }
 }
 
