@@ -8,7 +8,7 @@ keep = false;
 /** 적대적 함수 오버라이드 */
 parent.rsrvPopupClose = function () { console.log('팝업을 닫어?? 눈도 깜짝 안한다!'); }
 
-/** 로딩 포착 오버라이드 */
+/** 로딩 세마포어 */
 finishLoading = () => {};
 loadingPromise = Promise.resolve();
 
