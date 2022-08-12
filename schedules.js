@@ -41,8 +41,8 @@ async function doScheduleMagic() {
           frm.netfunnel_key.value = ":key=" + '${ret.data.key}' + "&";
           frm.submit();
         })()`;
-        console.log(`이렇게 쓰시라구요:\n${theSecretCode}`);
-        alert(`이렇게 쓰시라구요:\n${theSecretCode}`);
+        console.log(`// 이렇게 쓰시라구요:\n${theSecretCode}`);
+        alert(`// 이렇게 쓰시라구요:\n${theSecretCode}`);
 
         frm.netfunnel_key.value = ":key=" + ret.data.key + "&";
         frm.submit();
