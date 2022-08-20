@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c04b5bd2-9820-4c18-8ebe-ba48aee739d5" name="Changes" comment="chore: 인터벌 50밀리초로 단축,,,">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/melon-ticket-helper.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inject-schedules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inject-seats.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/seats.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2D7fknolrPGKdcgzNnPv37ih8SI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/potados/WebstormProjects/melon-ticket-helper",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content_scripts" />
+      <recent name="$PROJECT_DIR$/body" />
+      <recent name="$PROJECT_DIR$/common" />
+      <recent name="$PROJECT_DIR$/injection" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="NodeJSConfigurationType">
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSProfilingRunConfigurationExtension">
+        <profiling log-folder="/." />
+      </EXTENSION>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c04b5bd2-9820-4c18-8ebe-ba48aee739d5" name="Changes" comment="" />
+      <created>1660055189783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660055189783</updated>
+      <workItem from="1660055191231" duration="11750000" />
+      <workItem from="1660315432098" duration="5790000" />
+      <workItem from="1661005470766" duration="660000" />
+      <workItem from="1661006151457" duration="3291000" />
+    </task>
+    <task id="LOCAL-00001" summary="chore: 새로운 시작!">
+      <created>1660145649224</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660145649224</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: 프로젝트 이름 변경">
+      <created>1660145791561</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660145791561</updated>
+    </task>
+    <task id="LOCAL-00003" summary="chore: 프로젝트 이름 변경">
+      <created>1660145799871</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660145799871</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chore: 1번은 위험하니 42번 자리로 가자">
+      <created>1660215456841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660215456841</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: netfunnel과의 맞짱...">
+      <created>1660317578196</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1660317578197</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore: 작은 주석 수정,,">
+      <created>1660317668024</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1660317668024</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: theSecretCode 사용법 수정">
+      <created>1660317847677</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660317847677</updated>
+    </task>
+    <task id="LOCAL-00008" summary="chore: 인터벌 때문인가 싶어 늘려봄,,ㅠ">
+      <created>1660318688057</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660318688057</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chore: 인터벌은 관계없었고,,, 코드 바로 복사 가능하게 설명은 주석처리,,">
+      <created>1660321364298</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1660321364298</updated>
+    </task>
+    <task id="LOCAL-00010" summary="chore: 인터벌 50밀리초로 단축,,,">
+      <created>1660556994787</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1660556994787</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="chore: 새로운 시작!" />
+    <MESSAGE value="chore: 프로젝트 이름 변경" />
+    <MESSAGE value="chore: 1번은 위험하니 42번 자리로 가자" />
+    <MESSAGE value="feat: netfunnel과의 맞짱..." />
+    <MESSAGE value="chore: 작은 주석 수정,," />
+    <MESSAGE value="fix: theSecretCode 사용법 수정" />
+    <MESSAGE value="chore: 인터벌 때문인가 싶어 늘려봄,,ㅠ" />
+    <MESSAGE value="chore: 인터벌은 관계없었고,,, 코드 바로 복사 가능하게 설명은 주석처리,," />
+    <MESSAGE value="chore: 인터벌 50밀리초로 단축,,," />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 인터벌 50밀리초로 단축,,," />
+  </component>
+</project>

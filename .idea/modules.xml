@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/melon-ticket-assistent.iml" filepath="$PROJECT_DIR$/.idea/melon-ticket-assistent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/melon-ticket-helper.iml" filepath="$PROJECT_DIR$/.idea/melon-ticket-helper.iml" />
     </modules>
   </component>
 </project>
