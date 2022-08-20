@@ -33,10 +33,20 @@ function onPressKey(keyPressListeningWindow, key, action) {
   });
 }
 
+/**
+ * 요소의 텍스트가 포함하는 숫자가 0이 아닌 jQuery 요소만 필터링하는 함수입니다.
+ *
+ * @returns {boolean}
+ */
 function filterTextNonZero() {
   return Number.parseInt($(this).text()) !== 0
 }
 
+/**
+ * jQuery 요소의 텍스트를 추출하는 함수입니다.
+ *
+ * @returns {string}
+ */
 function extractText() {
   return $(this).text();
 }
