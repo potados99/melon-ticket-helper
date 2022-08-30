@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c04b5bd2-9820-4c18-8ebe-ba48aee739d5" name="Changes" comment="chore:">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/melon-ticket-helper.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/background.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inject-schedules.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inject-seats.js" beforeDir="false" />
+    <list default="true" id="c04b5bd2-9820-4c18-8ebe-ba48aee739d5" name="Changes" comment="chore: 주석 추가">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/injected/schedules.js" beforeDir="false" afterPath="$PROJECT_DIR$/injected/schedules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/injected/seats.js" beforeDir="false" afterPath="$PROJECT_DIR$/injected/seats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedules.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/seats.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -85,6 +80,8 @@
       <workItem from="1660315432098" duration="5790000" />
       <workItem from="1661005470766" duration="660000" />
       <workItem from="1661006151457" duration="3291000" />
+      <workItem from="1661009684079" duration="1053000" />
+      <workItem from="1661855917647" duration="7209000" />
     </task>
     <task id="LOCAL-00001" summary="chore: 새로운 시작!">
       <created>1660145649224</created>
@@ -156,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660556994787</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="chore: 주석 추가">
+      <created>1661009730454</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661009730454</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +190,7 @@
     <MESSAGE value="chore: 인터벌 때문인가 싶어 늘려봄,,ㅠ" />
     <MESSAGE value="chore: 인터벌은 관계없었고,,, 코드 바로 복사 가능하게 설명은 주석처리,," />
     <MESSAGE value="chore: 인터벌 50밀리초로 단축,,," />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: 인터벌 50밀리초로 단축,,," />
+    <MESSAGE value="chore: 주석 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 주석 추가" />
   </component>
 </project>

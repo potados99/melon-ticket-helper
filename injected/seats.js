@@ -1,18 +1,12 @@
+// noinspection JSJQueryEfficiency
+
 /****************************************************************
  * 좌석 선택 화면에서 실행될 스크립트입니다.
  *****************************************************************/
 
-/**
- * 페이지에서 oneStopFrame을 찾아와주는 함수입니다.
- *
- * @returns {Window} 찾아온 oneStopFrame
- */
-function theFrame() {
-  if (window._theFrameInstance == null) {
-    window._theFrameInstance = document.getElementById('oneStopFrame').contentWindow;
-  }
-
-  return window._theFrameInstance;
+const seatSelectionConfig = {
+  amongTheseSections: ['VIP', 'R', 'S', '현장수령', 'A'],
+  // amongTheseSections: ['A'],
 }
 
 /**
@@ -20,36 +14,63 @@ function theFrame() {
  * 새 변수를 정의하며, 기존 함수를 오버라이드합니다.
  */
 function prepare() {
-  /** 제어 플래그 */
-  window.keepRunning = false;
+  const declarations = {
+    runStates: {
+      keepRunning: false,
+      toggleKeepRunning: () => {
+        runStates.keepRunning = !runStates.keepRunning;
+      }
+    },
 
-  /** 적대적 함수 오버라이드 */
-  parent.rsrvPopupClose = function () {
-    console.log('원래라면 팝업을 닫아야 하지만, 무시합니다.');
-  }
+    loadingStates: {
+      loadingPromise: Promise.resolve(),
+      finishLoading: () => {
+        console.warn('지금 이 타이밍에 이게 실행되면 안 됩니다 ㅠㅡㅠ');
+      },
+    },
 
-  /** 로딩 세마포어 */
-  window.finishLoading = () => {
-    console.warn('지금 이 타이밍에 이게 실행되면 안 됩니다 ㅠㅡㅠ');
-  };
-  window.loadingPromise = Promise.resolve();
+    get frame() {
+      if (window._theFrameInstance == null) {
+        window._theFrameInstance = document.getElementById('oneStopFrame').contentWindow;
+      }
 
-  /** 로딩 함수 오버라이드 */
-  theFrame().setLoading = function (isLoading) {
-    if (isLoading) {
-      window.loadingPromise = new Promise((res) => {
-        window.finishLoading = res;
-      });
-
-      loadingOpen(' ');
-    } else {
-      window.finishLoading();
-
-      setTimeout(function () {
-        loadingClose();
-      }, 500);
+      return window._theFrameInstance;
     }
-  }
+  };
+
+  const overrides = {
+    getLoadingPage: function (bShow) {
+      if (bShow === true) {
+        loadingStates.loadingPromise = new Promise((res) => {
+          loadingStates.finishLoading = res;
+        });
+
+        if ($('body').find('#loading_layer').length === 0) {
+          var _ds = [];
+          _ds.push('<div class="layer_comm loading full_h" id="loading_layer">');
+          _ds.push('<div class="bg"></div>');
+          _ds.push('<div class="inner">');
+          _ds.push('<span class="rotate"></span>');
+          _ds.push('<span class="bounce"></span>');
+          _ds.push('</div>');
+          _ds.push('</div>');
+          $('body').append($(_ds.join('')));
+        } else {
+          $('body').find('#loading_layer').css('display', '');
+        }
+      } else {
+        window.finishLoading();
+
+        $('#loading_layer').css('display', 'none');
+      }
+    }
+  };
+
+  Object.assign(window, declarations, overrides);
+
+  $('#btnComplete').click(function () {
+    $(this).trigger('touchend');
+  })
 }
 
 /**
@@ -61,40 +82,50 @@ function prepare() {
  * @returns {Promise<boolean>}
  */
 async function doSeatMagic() {
-  const targetSections = ['VIP', 'R', 'S', '현장수령', 'A'];
-
   /** 새로고침 후 로딩이 끝날 때까지 기다립니다. */
-  theFrame().$('#btnReloadSchedule').click();
-  await window.loadingPromise;
+  frame.$('#btnReloadSchedule').click();
+  await loadingStates.loadingPromise;
 
-  /** 좌석 구역을 다 펼칩니다. */
-  for (const section of targetSections) {
-    theFrame().$(`#divGradeSummary tr:contains("${section}")`).first().click();
-  }
+  for (const section of seatSelectionConfig.amongTheseSections) {
+    /** 구역 열기 */
+    frame.$(`#div_grade_summary li`).filter(function () {
+      return $(this).text().startsWith(section)
+    }).get(0).dispatchEvent(new Event('click'));
 
-  /** 좌석 구역 중 자리가 있는 것을 가져옵니다.. */
-  const availableSections = theFrame().$(`#divGradeSummary li span.seat_residual`).filter(filterTextNonZero);
+    await sleep(50);
 
-  if (availableSections.length === 0) {
-    console.log('빈 자리가 있는 구역이 없습니다.');
+    /** 좌석 구역 중 자리가 있는 것을 가져옵니다. */
+    const availableSections = frame.$('#div_block_summary li').filter(function () {
+      return Number.parseInt($(this).find('span.seat_residual strong').text()) !== 0;
+    });
 
-    return true;
-  } else {
-    console.log(`빈 자리가 있는 구역이 발견되었습니다: ${availableSections.map(extractText)}`)
+    await sleep(50);
 
-    /** 빈 자리가 있는 첫 번째 좌석 구역을 확장합니다. */
+    if (availableSections.length === 0) {
+      console.log('빈 자리가 있는 구역이 없습니다.');
+      continue;
+    }
+
+    console.log(`빈 자리가 있는 구역이 발견되었습니다: ${availableSections.map(extractText).get().join(', ')}`);
+
     availableSections.first().click();
+
     await sleep(50);
 
-    /** 첫 번째 예매 가능한 좌석을 찍습니다. */
-    theFrame().$('#ez_canvas svg rect[fill!="#DDDDDD"]').get(1/*0은 전체 사각형 그 자체*/).dispatchEvent(new Event('click'));
+    frame.$('#nextTicketSelection').click();
+
+    await sleep(1000);
+
+    frame.$('#ez_canvas svg rect[fill!="#DDDDDD"]').get(1/*0은 전체 사각형 그 자체*/).dispatchEvent(new Event('click'));
+
     await sleep(50);
 
-    /** 가격 선택 화면으로 넘어갑니다. */
-    theFrame().$('#nextTicketSelection').click();
+    frame.$('#nextTicketSelection').click();
 
     return false;
   }
+
+  return true;
 }
 
 /**
@@ -106,11 +137,11 @@ async function runOrStop() {
   window.keepRunning = !window.keepRunning;
   console.log(keepRunning ? '좌석 찾는 루프를 시작합니다.' : '좌석 찾는 루프를 멈춥니다.');
 
-  theFrame().$('#viewAll').click();
+  frame.$('#viewAll').click();
 
   await sleep(500);
 
-  while (window.keepRunning) {
+  while (keepRunning) {
     try {
       const keep = await doSeatMagic();
       if (!keep) {
@@ -127,7 +158,7 @@ async function runOrStop() {
 
 try {
   prepare();
-  onPressKey(theFrame(), '/', () => runOrStop());
+  onPressKey(frame, '/', () => runOrStop());
   onPressKey(window, '/', () => runOrStop());
 } catch (e) {
   alert(`스크립트를 준비하는 중에 문제가 발생하였습니다: ${e.message}`);

@@ -1,21 +1,21 @@
 {
   "name": "멜론 티켓 도우미",
-  "version": "0.2",
+  "version": "0.3",
   "description": "예매창에서 빈 자리를 찾는 일을 도와줍니다.",
   "manifest_version": 3,
   "content_scripts": [
     {
-      "matches": ["https://ticket.melon.com/**"],
+      "matches": ["https://m.ticket.melon.com/**"],
       "run_at": "document_start",
       "js": ["scripts/injector.js"]
     },
     {
-      "matches": ["https://ticket.melon.com/performance/index.htm?prodId=**"],
+      "matches": ["https://m.ticket.melon.com/public/index.html**"],
       "run_at": "document_start",
       "js": ["scripts/inject-schedules.js"]
     },
     {
-    "matches": ["https://ticket.melon.com/reservation/popup/onestop.htm"],
+    "matches": ["https://m.ticket.melon.com/reservation/onestop.htm"],
     "run_at": "document_start",
     "js": ["scripts/inject-seats.js"]
     }
@@ -32,6 +32,6 @@
     "cookies"
   ],
   "host_permissions": [
-    "https://ticket.melon.com/"
+    "https://m.ticket.melon.com/"
   ]
 }
